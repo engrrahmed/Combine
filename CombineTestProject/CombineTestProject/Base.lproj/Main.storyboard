@@ -20,13 +20,29 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="setUserPassword:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="VIf-Nb-zh2"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9DU-3L-5V2"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="arE-kI-yot">
                                 <rect key="frame" x="72" y="282" width="235" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="setConfirmPassword:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="53e-57-ZwG"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="IOF-ES-2Kz"/>
+                                    <outlet property="textDragDelegate" destination="BYZ-38-t0r" id="IsP-w5-SBe"/>
+                                </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBT-t0-V4s">
+                                <rect key="frame" x="127" y="119" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Vs-Uo-6Hy">
                                 <rect key="frame" x="127" y="427.5" width="160" height="41"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -52,6 +68,8 @@
                     <connections>
                         <outlet property="confirmTextField" destination="arE-kI-yot" id="M8o-Uh-fzE"/>
                         <outlet property="passwordTextField" destination="Iv9-GV-OZ5" id="97q-zK-Acg"/>
+                        <outlet property="showTextLabel" destination="RBT-t0-V4s" id="ISf-FX-ZIj"/>
+                        <outlet property="signUpButton" destination="4Vs-Uo-6Hy" id="lJg-A2-qAp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
