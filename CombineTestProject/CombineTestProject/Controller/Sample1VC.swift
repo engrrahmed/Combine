@@ -1,23 +1,27 @@
 //
-//  ViewController.swift
+//  Sample1VC.swift
 //  CombineTestProject
 //
-//  Created by Rizwan Ahmed on 31/07/2019.
+//  Created by Rizwan Ahmed on 01/08/2019.
 //  Copyright © 2019 Tintash. All rights reserved.
 //
 
 import UIKit
 import Combine
-
-class ViewController: UIViewController {
+//import Publi
+class Sample1VC: UIViewController {
     
     @IBOutlet weak var showTextLabel        : UILabel!
     @IBOutlet weak var passwordTextField    : UITextField!
     @IBOutlet weak var confirmTextField     : UITextField!
     @IBOutlet weak var signUpButton         : UIButton!
     
+    
     @Published var passwordText         : String = ""
     @Published var confirmPasswordText  : String = ""
+    private var validatedCredentials    : AnyCancellable?
+    
+    
     
     private var passwordSubscription: AnyCancellable?
     
@@ -25,17 +29,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        passwordSubscription = $passwordText.sink {
-            print("The published value is for password '\($0)'")
-            self.showTextLabel.text = $0
-        }
-        
-        //        $passwordText.receive(on: DispatchQueue.main).assign(to: \.isEnabled, on: signUpButton)
+        validatedCredentials = Publishers.CombineLatest($passwordText, $confirmPasswordText)
+            .map { (password, confirmedPassword) -> Bool in
+                print("password: \(password) , confirmPassword : \(confirmedPassword)")
+                guard password == confirmedPassword, password.count > 8 else { return true }
+                return false
+        }.receive(on: DispatchQueue.main).assign(to: \.isHidden, on: signUpButton)
+        //        sink { isInValidPassword in
+        //            print("IS Valid PASSWORD: \(isValidPassword)")
+        //
+        //        }
     }
     
     @IBAction func clickOnSignUpButton(_ sender: Any) {
         passwordText = "ABC"
-        confirmPasswordText = "DGH"
     }
     
     @IBAction func didUpdatingPassword(_ sender: UITextField) {
@@ -48,19 +55,5 @@ class ViewController: UIViewController {
     
     @IBAction func setConfirmPassword(_ sender: UITextField) {
         confirmPasswordText = sender.text ?? ""
-    }
-    
-}
-
-extension ViewController:UITextFieldDelegate {
-    
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        return true
-    }
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        return true
-    }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return true
     }
 }
