@@ -17,6 +17,10 @@
 		DD33AA7322F2FC3F0019819B /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD33AA7222F2FC3F0019819B /* NetworkAPI.swift */; };
 		DD33AA7822F2FC8B0019819B /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD33AA7722F2FC8B0019819B /* APIConfig.swift */; };
 		DD33AA7B22F304080019819B /* Sample1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD33AA7A22F304080019819B /* Sample1VC.swift */; };
+		DD33AA7D22F376BE0019819B /* FindUserServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD33AA7C22F376BE0019819B /* FindUserServiceAPI.swift */; };
+		DD33AA7F22F37AB70019819B /* SignUpUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD33AA7E22F37AB70019819B /* SignUpUserViewController.swift */; };
+		DD33AA8122F37ADD0019819B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD33AA8022F37ADD0019819B /* SignUpViewModel.swift */; };
+		DD33AA8422F380260019819B /* FindUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD33AA8322F380260019819B /* FindUserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		DD33AA7222F2FC3F0019819B /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		DD33AA7722F2FC8B0019819B /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		DD33AA7A22F304080019819B /* Sample1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample1VC.swift; sourceTree = "<group>"; };
+		DD33AA7C22F376BE0019819B /* FindUserServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindUserServiceAPI.swift; sourceTree = "<group>"; };
+		DD33AA7E22F37AB70019819B /* SignUpUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUserViewController.swift; sourceTree = "<group>"; };
+		DD33AA8022F37ADD0019819B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		DD33AA8322F380260019819B /* FindUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindUserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +112,7 @@
 			children = (
 				DD33AA7222F2FC3F0019819B /* NetworkAPI.swift */,
 				DD33AA7722F2FC8B0019819B /* APIConfig.swift */,
+				DD33AA7C22F376BE0019819B /* FindUserServiceAPI.swift */,
 			);
 			path = NetworkAPI;
 			sourceTree = "<group>";
@@ -112,8 +121,19 @@
 			isa = PBXGroup;
 			children = (
 				DD33AA7A22F304080019819B /* Sample1VC.swift */,
+				DD33AA8222F380110019819B /* SignUp */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		DD33AA8222F380110019819B /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				DD33AA7E22F37AB70019819B /* SignUpUserViewController.swift */,
+				DD33AA8022F37ADD0019819B /* SignUpViewModel.swift */,
+				DD33AA8322F380260019819B /* FindUserModel.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,9 +257,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD33AA6322F1CF270019819B /* ViewController.swift in Sources */,
+				DD33AA8422F380260019819B /* FindUserModel.swift in Sources */,
 				DD33AA5F22F1CF270019819B /* AppDelegate.swift in Sources */,
 				DD33AA6122F1CF270019819B /* SceneDelegate.swift in Sources */,
 				DD33AA7322F2FC3F0019819B /* NetworkAPI.swift in Sources */,
+				DD33AA8122F37ADD0019819B /* SignUpViewModel.swift in Sources */,
+				DD33AA7D22F376BE0019819B /* FindUserServiceAPI.swift in Sources */,
+				DD33AA7F22F37AB70019819B /* SignUpUserViewController.swift in Sources */,
 				DD33AA7B22F304080019819B /* Sample1VC.swift in Sources */,
 				DD33AA7822F2FC8B0019819B /* APIConfig.swift in Sources */,
 			);

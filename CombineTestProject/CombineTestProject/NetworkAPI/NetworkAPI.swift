@@ -11,8 +11,8 @@ import Alamofire
 
 protocol NetworkEngine {
     
-    typealias success<RESULT>   = (([RESULT])->Void)?
-    typealias failure          = ((String)->Void)?
+    typealias success   =  ((DataResponse<Data>?, String?) -> Void)
+    typealias failure   = ((String)->Void)?
 }
 extension NetworkEngine {
     
@@ -25,17 +25,20 @@ extension NetworkEngine {
         return nil
     }
     
-    func fetchAPI<RESULT: Decodable> (searchPath     : String,
-                                      success        : success<RESULT>,
-                                      failure        : failure) {
+    //completion:@escaping (DataResponse<Data>?, String?) -> Void)
+    func fetchAPI(searchPath     : String,
+                  success        : @escaping success,
+                  failure        : failure) {
         guard let url = self.flickrSearchURLForSearchTerm(searchPath) else {
             return
         }
-        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).response {  response in
+        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData {  response in
             //Unauthorized, token expired or invalid
             print("GET URL Call")
             if response.response?.statusCode == 401 {
                 //            success(response.data)
+            } else  {
+                success(response as DataResponse<Data>?, nil)
             }
         }
     }
