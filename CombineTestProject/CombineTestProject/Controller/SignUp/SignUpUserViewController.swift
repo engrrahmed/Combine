@@ -30,20 +30,22 @@ class SignUpUserViewController: UIViewController {
     var validatedPassword: AnyPublisher<String?, Never> {
         return Publishers.CombineLatest($passwordText, $confirmPasswordText)
             .receive(on: RunLoop.main)
-            .map { passwordText, confirmPasswordText in
+            .map { passwordText, confirmPasswordText -> String? in
                 guard confirmPasswordText == passwordText, passwordText.count > 5 else {
                     self.passwordErrorLabel.text = "values must match and have at least 5 characters"
                     return nil
                 }
                 self.passwordErrorLabel.text = ""
                 return passwordText
-        }.eraseToAnyPublisher()
+        }.map { $0 == "password1"  ? nil : $0}
+            .eraseToAnyPublisher()
     }
     
     var validatedUsername: AnyPublisher<String?, Never> {
         return $userName
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .removeDuplicates()
+//            .switchToLatest()
             .flatMap { userName in
                 return Future { promise in
                     self.viewModel.findUserIDFor(userId: userName) { available in
@@ -51,8 +53,7 @@ class SignUpUserViewController: UIViewController {
                         promise(.success(available ? userName : nil))
                     }
                 }
-        }
-        .eraseToAnyPublisher()
+        }.eraseToAnyPublisher()
     }
     
     var readyToSubmit: AnyPublisher<(String, String)?, Never> {
