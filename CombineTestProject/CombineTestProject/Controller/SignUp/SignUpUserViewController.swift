@@ -12,12 +12,13 @@ import Combine
 //import Publi
 class SignUpUserViewController: UIViewController {
     
-    @IBOutlet weak var showTextLabel        : UILabel!
+    @IBOutlet weak var passwordErrorLabel   : UILabel!
+    @IBOutlet weak var userNotFoundLabel    : UILabel!
     @IBOutlet weak var userNameTextField    : UITextField!
     @IBOutlet weak var passwordTextField    : UITextField!
     @IBOutlet weak var confirmTextField     : UITextField!
     @IBOutlet weak var signUpButton         : UIButton!
-        
+    
     var viewModel = SignUpViewModel()
     
     @Published var userName             : String = ""
@@ -26,23 +27,17 @@ class SignUpUserViewController: UIViewController {
     
     private var cancellableSet          : Set<AnyCancellable> = []
     
-    private var validatedPassword1      : AnyCancellable?
-    private var userNameSubscription    : AnyCancellable?
-    private var validatedCredentials    : AnyCancellable?
-    
-//    private var validatedUsername       : AnyCancellable?
-    
     var validatedPassword: AnyPublisher<String?, Never> {
-        return Publishers.CombineLatest($passwordText, $passwordText)
+        return Publishers.CombineLatest($passwordText, $confirmPasswordText)
             .receive(on: RunLoop.main)
             .map { passwordText, confirmPasswordText in
                 guard confirmPasswordText == passwordText, passwordText.count > 5 else {
-                    self.showTextLabel.text = "values must match and have at least 5 characters"
+                    self.passwordErrorLabel.text = "values must match and have at least 5 characters"
                     return nil
                 }
-                self.showTextLabel.text = ""
+                self.passwordErrorLabel.text = ""
                 return passwordText
-            }.eraseToAnyPublisher()
+        }.eraseToAnyPublisher()
     }
     
     var validatedUsername: AnyPublisher<String?, Never> {
@@ -52,20 +47,13 @@ class SignUpUserViewController: UIViewController {
             .flatMap { userName in
                 return Future { promise in
                     self.viewModel.findUserIDFor(userId: userName) { available in
+                        self.userNotFoundLabel.isHidden = available
                         promise(.success(available ? userName : nil))
                     }
                 }
         }
         .eraseToAnyPublisher()
     }
-    
-//    var validatedCredentials: AnyPublisher<(String, String)?, Never> {
-//        return Publishers.CombineLatest(validatedUsername, validatedPassword) { username, password in
-//            guard let uname = username, let pwd = password else { return nil }
-//            return (uname, pwd)
-//        }
-//        .eraseToAnyPublisher()
-//    }
     
     var readyToSubmit: AnyPublisher<(String, String)?, Never> {
         return Publishers.CombineLatest(validatedUsername, validatedPassword)
@@ -74,63 +62,34 @@ class SignUpUserViewController: UIViewController {
                     return nil
                 }
                 return (realValue2, realValue1)
-            }
-            .eraseToAnyPublisher()
+        }
+        .eraseToAnyPublisher()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        signUpButton.setTitleColor(.red, for: .disabled)
+        signUpButton.setTitleColor(.white, for: .normal)
         self.readyToSubmit
-                 .map { $0 != nil }
-                 .receive(on: RunLoop.main)
-                 .assign(to: \.isHidden, on: signUpButton)
-                 .store(in: &cancellableSet)
-//         }
-        
-        
-//        userNameSubscription = $userName.sink {
-//            print("The published value is for password '\($0)'")
-//            self.showTextLabel.text = $0
-//            self.viewModel.findUserIDFor(userId: $0) { isUserfound in
-//                print("is User found :\(isUserfound)" )
-//            }
-//        }
-//
-//
-//
-//        validatedPassword1 = Publishers.CombineLatest($passwordText, $confirmPasswordText)
-//            .map { (password, confirmedPassword) -> Bool in
-//                print("password: \(password) , confirmPassword : \(confirmedPassword)")
-//                guard password == confirmedPassword, password.count > 8 else { return true }
-//                return false
-//        }.receive(on: DispatchQueue.main).assign(to: \.isHidden, on: signUpButton)
-//
-//        validatedCredentials =  Publishers.CombineLatest(validatedUsername, validatedPassword) { username, password in
-//                   guard let uname = username, let pwd = password else { return nil }
-//                   return (uname, pwd)
-//               }
-//               .eraseToAnyPublisher()
-        
+            .map { $0 != nil }
+            .receive(on: RunLoop.main)
+            .assign(to: \.isEnabled, on: signUpButton)
+            .store(in: &cancellableSet)
     }
     
     @IBAction func clickOnSignUpButton(_ sender: Any) {
-        passwordText = "ABC"
+        
     }
-    
-    @IBAction func didUpdatingPassword(_ sender: UITextField) {
-        passwordText = sender.text ?? ""
-    }
-    
-    @IBAction func setUserName(_ sender: UITextField) {
+
+    @IBAction func userNameChanged(_ sender: UITextField) {
         userName = sender.text ?? ""
     }
-    @IBAction func setUserPassword(_ sender: UITextField) {
+    @IBAction func userPasswordChanged(_ sender: UITextField) {
         passwordText = sender.text ?? ""
     }
     
-    @IBAction func setConfirmPassword(_ sender: UITextField) {
+    @IBAction func confirmPasswordChanged(_ sender: UITextField) {
         confirmPasswordText = sender.text ?? ""
     }
 }
