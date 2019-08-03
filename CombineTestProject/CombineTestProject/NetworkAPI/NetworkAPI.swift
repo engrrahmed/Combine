@@ -34,7 +34,6 @@ extension NetworkEngine {
         }
         Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData {  response in
             //Unauthorized, token expired or invalid
-            print("GET URL Call")
             if response.response?.statusCode == 401 {
                 //            success(response.data)
             } else  {

@@ -15,6 +15,7 @@ extension FindUserServiceAPI {
     func findUserID(userId:String, completion: @escaping (Data?, String?) -> Void) {
         
         fetchAPI(searchPath: userId, success: { (response, error) in
+            print("URL Call for : \(userId)")
             if let responseData = response?.result.value {
                 completion(responseData, error)
             }

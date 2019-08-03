@@ -44,16 +44,18 @@ class SignUpUserViewController: UIViewController {
     var validatedUsername: AnyPublisher<String?, Never> {
         return $userName
             .debounce(for: 0.5, scheduler: RunLoop.main)
+            //            .throttle(for: 0.5, scheduler: RunLoop.main, latest: true)
             .removeDuplicates()
-//            .switchToLatest()
+            .filter { stringValue in return stringValue != ""}
             .flatMap { userName in
-                return Future { promise in
+                return Future { promise in //(Result<Output, Failure>) -> Void
                     self.viewModel.findUserIDFor(userId: userName) { available in
                         self.userNotFoundLabel.isHidden = available
                         promise(.success(available ? userName : nil))
                     }
                 }
-        }.eraseToAnyPublisher()
+        }
+        .eraseToAnyPublisher()
     }
     
     var readyToSubmit: AnyPublisher<(String, String)?, Never> {
@@ -75,6 +77,10 @@ class SignUpUserViewController: UIViewController {
         self.readyToSubmit
             .map { $0 != nil }
             .receive(on: RunLoop.main)
+//            .replaceError(with: false)
+//            .sink { (valid) in
+//                print("CombineLatest: Are the credentials valid: \(valid)")
+//        }
             .assign(to: \.isEnabled, on: signUpButton)
             .store(in: &cancellableSet)
     }

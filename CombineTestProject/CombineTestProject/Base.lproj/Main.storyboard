@@ -91,6 +91,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="didUpdatingPassword:" destination="BYZ-38-t0r" eventType="editingChanged" id="cSk-Ic-5h5"/>
                                     <action selector="setUserPassword:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="VIf-Nb-zh2"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="9DU-3L-5V2"/>
                                 </connections>
@@ -264,7 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rQL-kd-07b" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="94" y="263"/>
+            <point key="canvasLocation" x="58" y="425"/>
         </scene>
         <!--Sign Up User View Controller-->
         <scene sceneID="4xn-Zu-S4s">
