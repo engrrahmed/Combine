@@ -38,6 +38,13 @@ class SignUpUserVC: UIViewController {
                 self.passwordErrorLabel.text = ""
                 return passwordText
         }.map { $0 == "password1"  ? nil : $0}
+            /* //Adding Break point for the debugging purpose
+            .breakpoint( receiveOutput: { (test) -> Bool in
+                print(test)
+                if (test == "rizwan") { return true}
+                return false
+            })
+            */
             .eraseToAnyPublisher()
     }
     

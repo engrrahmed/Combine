@@ -16,7 +16,7 @@ class MVVMSampleVM {
     
     @Published var passwordText         : String = ""
     @Published var confirmPasswordText  : String = ""
-        
+    
     func setupPasswordValidatorOnbutton() -> AnyPublisher<Bool, Never> {
         return Publishers.CombineLatest($passwordText, $confirmPasswordText)
             .map { (password, confirmedPassword) -> Bool in

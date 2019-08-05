@@ -23,12 +23,12 @@ class MVVMSampleVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-     validatedCredentials = viewModel.setupPasswordValidatorOnbutton()
-        .receive(on: DispatchQueue.main)
-        .sink { [weak self] isInValidPassword in
-            print("IS Valid PASSWORD: \(isInValidPassword)")
-            self?.signUpButton.isHidden = isInValidPassword
-            self?.showTextLabel.isHidden = !isInValidPassword
+        validatedCredentials = viewModel.setupPasswordValidatorOnbutton()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] isInValidPassword in
+                print("IS Valid PASSWORD: \(isInValidPassword)")
+                self?.signUpButton.isHidden = isInValidPassword
+                self?.showTextLabel.isHidden = !isInValidPassword
         }
         //        .assign(to: \.isHidden, on: signUpButton)
     }
