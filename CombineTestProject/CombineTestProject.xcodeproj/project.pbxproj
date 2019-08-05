@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		816555D7C1C53811C2D66620 /* Pods_CombineTestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB21D41D547EEC9ABC951CAF /* Pods_CombineTestProject.framework */; };
+		DD2D508622F80A6400DA8FF8 /* MVVMSampleVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D508522F80A6400DA8FF8 /* MVVMSampleVM.swift */; };
+		DD2D508822F80A7A00DA8FF8 /* MVVMSampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D508722F80A7A00DA8FF8 /* MVVMSampleVC.swift */; };
 		DD33AA5F22F1CF270019819B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD33AA5E22F1CF270019819B /* AppDelegate.swift */; };
 		DD33AA6122F1CF270019819B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD33AA6022F1CF270019819B /* SceneDelegate.swift */; };
 		DD33AA6322F1CF270019819B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD33AA6222F1CF270019819B /* ViewController.swift */; };
@@ -27,6 +29,8 @@
 		33A497D2C45F7D496F777EB5 /* Pods-CombineTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CombineTestProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CombineTestProject/Pods-CombineTestProject.debug.xcconfig"; sourceTree = "<group>"; };
 		5386D674CE6ABD0F92D60834 /* Pods-CombineTestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CombineTestProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-CombineTestProject/Pods-CombineTestProject.release.xcconfig"; sourceTree = "<group>"; };
 		BB21D41D547EEC9ABC951CAF /* Pods_CombineTestProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CombineTestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD2D508522F80A6400DA8FF8 /* MVVMSampleVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSampleVM.swift; sourceTree = "<group>"; };
+		DD2D508722F80A7A00DA8FF8 /* MVVMSampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSampleVC.swift; sourceTree = "<group>"; };
 		DD33AA5B22F1CF270019819B /* CombineTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD33AA5E22F1CF270019819B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD33AA6022F1CF270019819B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +75,15 @@
 				5386D674CE6ABD0F92D60834 /* Pods-CombineTestProject.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		DD2D508422F80A3F00DA8FF8 /* MVVMSample */ = {
+			isa = PBXGroup;
+			children = (
+				DD2D508522F80A6400DA8FF8 /* MVVMSampleVM.swift */,
+				DD2D508722F80A7A00DA8FF8 /* MVVMSampleVC.swift */,
+			);
+			path = MVVMSample;
 			sourceTree = "<group>";
 		};
 		DD33AA5222F1CF270019819B = {
@@ -120,6 +133,7 @@
 		DD33AA7922F303C80019819B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DD2D508422F80A3F00DA8FF8 /* MVVMSample */,
 				DD33AA7A22F304080019819B /* Sample1VC.swift */,
 				DD33AA8222F380110019819B /* SignUp */,
 			);
@@ -264,7 +278,9 @@
 				DD33AA8122F37ADD0019819B /* SignUpViewModel.swift in Sources */,
 				DD33AA7D22F376BE0019819B /* FindUserServiceAPI.swift in Sources */,
 				DD33AA7F22F37AB70019819B /* SignUpUserViewController.swift in Sources */,
+				DD2D508622F80A6400DA8FF8 /* MVVMSampleVM.swift in Sources */,
 				DD33AA7B22F304080019819B /* Sample1VC.swift in Sources */,
+				DD2D508822F80A7A00DA8FF8 /* MVVMSampleVC.swift in Sources */,
 				DD33AA7822F2FC8B0019819B /* APIConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

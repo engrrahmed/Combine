@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ccH-YC-s2b">
-                                <rect key="frame" x="127" y="362.5" width="160" height="171"/>
+                                <rect key="frame" x="127" y="330" width="160" height="236"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9GG-1g-Rmm">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="41"/>
@@ -58,6 +58,20 @@
                                         </state>
                                         <connections>
                                             <segue destination="vcg-NH-GCT" kind="show" id="rGr-J3-WMF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFL-m9-cIZ">
+                                        <rect key="frame" x="0.0" y="195" width="160" height="41"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="2l7-kv-e07"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="MVVM">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="14T-Js-ayE" kind="show" id="039-0A-dWo"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -138,9 +152,6 @@
                                 <state key="normal" title="Next Sample">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <segue destination="VN2-O2-qSn" kind="show" id="lUm-9z-dTi"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -169,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="29" y="-293"/>
+            <point key="canvasLocation" x="-123" y="-1075"/>
         </scene>
         <!--Sample1VC-->
         <scene sceneID="AJV-43-4Wl">
@@ -265,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rQL-kd-07b" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="58" y="425"/>
+            <point key="canvasLocation" x="-123" y="-406"/>
         </scene>
         <!--Sign Up User View Controller-->
         <scene sceneID="4xn-Zu-S4s">
@@ -364,10 +375,86 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OET-oF-IXZ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-674" y="1024"/>
+            <point key="canvasLocation" x="-123" y="266"/>
+        </scene>
+        <!--SampleVC-->
+        <scene sceneID="DUy-GF-kBh">
+            <objects>
+                <viewController id="14T-Js-ayE" customClass="MVVMSampleVC" customModule="CombineTestProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kFu-iv-deO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfY-sE-X6w">
+                                <rect key="frame" x="127" y="400.5" width="160" height="41"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="Hw8-vD-Wit"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="SignUp">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickOnSignUpButton:" destination="14T-Js-ayE" eventType="touchUpInside" id="feN-t0-Aku"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eU5-1f-KUI">
+                                <rect key="frame" x="107" y="270.5" width="200" height="100"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5UA-H0-Bfc">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="bgX-pl-4u7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="didUpdatingPassword:" destination="14T-Js-ayE" eventType="editingChanged" id="K4o-1y-Vo9"/>
+                                            <outlet property="delegate" destination="14T-Js-ayE" id="zIZ-WC-2Gz"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="re-type password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5wK-vI-KVR">
+                                        <rect key="frame" x="0.0" y="44" width="200" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="xKF-Nt-o9e"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="setUpdatingConfirmPassword:" destination="14T-Js-ayE" eventType="editingChanged" id="ODC-3x-WDm"/>
+                                            <outlet property="delegate" destination="14T-Js-ayE" id="VCK-fR-jjD"/>
+                                            <outlet property="textDragDelegate" destination="14T-Js-ayE" id="8kY-v6-jEg"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="passord mismatched" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nR1-qF-1Tb">
+                                        <rect key="frame" x="0.0" y="88" width="200" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WfY-sE-X6w" firstAttribute="centerX" secondItem="kFu-iv-deO" secondAttribute="centerX" id="Ps7-6G-JKK"/>
+                            <constraint firstItem="WfY-sE-X6w" firstAttribute="centerY" secondItem="kFu-iv-deO" secondAttribute="centerY" id="UZr-D7-d7l"/>
+                            <constraint firstItem="eU5-1f-KUI" firstAttribute="centerX" secondItem="kFu-iv-deO" secondAttribute="centerX" id="XhX-Bk-qKg"/>
+                            <constraint firstItem="WfY-sE-X6w" firstAttribute="top" secondItem="eU5-1f-KUI" secondAttribute="bottom" constant="30" id="zKn-Nh-caH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Gd-AJ-3n4"/>
+                    </view>
+                    <connections>
+                        <outlet property="confirmTextField" destination="5wK-vI-KVR" id="ywV-hh-NyF"/>
+                        <outlet property="passwordTextField" destination="5UA-H0-Bfc" id="rud-Jr-uu2"/>
+                        <outlet property="showTextLabel" destination="nR1-qF-1Tb" id="lMy-1G-G0D"/>
+                        <outlet property="signUpButton" destination="WfY-sE-X6w" id="bqA-xf-xvI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Mz-he-WQZ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-123" y="958"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="lUm-9z-dTi"/>
-    </inferredMetricsTieBreakers>
 </document>
