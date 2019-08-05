@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ccH-YC-s2b">
-                                <rect key="frame" x="127" y="330" width="160" height="236"/>
+                                <rect key="frame" x="127" y="297.5" width="160" height="301"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9GG-1g-Rmm">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="41"/>
@@ -72,6 +72,20 @@
                                         </state>
                                         <connections>
                                             <segue destination="14T-Js-ayE" kind="show" id="039-0A-dWo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eT2-nT-zjR">
+                                        <rect key="frame" x="0.0" y="260" width="160" height="41"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="qYQ-YV-DQb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Async">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="JCx-y1-est" kind="show" id="N3Q-8K-1nd"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -455,6 +469,150 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Mz-he-WQZ" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-123" y="958"/>
+        </scene>
+        <!--AsyncVC-->
+        <scene sceneID="mao-Ye-zZ2">
+            <objects>
+                <viewController id="JCx-y1-est" customClass="AsyncVC" customModule="CombineTestProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B51-x2-Q8q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mut-R0-T5t">
+                                <rect key="frame" x="127" y="400.5" width="160" height="41"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="hin-JI-WYy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="SignUp">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickOnSignUpButton:" destination="JCx-y1-est" eventType="touchUpInside" id="zLu-ci-03P"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6TA-gG-Ykm">
+                                <rect key="frame" x="57" y="204.5" width="300" height="166"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iFR-eh-Nkc">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pHD-2o-jVD">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="160" id="Wb0-JK-JKc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="userName1Changed:" destination="JCx-y1-est" eventType="editingChanged" id="fYJ-VO-Ij8"/>
+                                                    <outlet property="delegate" destination="JCx-y1-est" id="sIe-8K-bj9"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User not found" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EjQ-2C-W6P">
+                                                <rect key="frame" x="168" y="0.0" width="132" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tYR-tc-T0j">
+                                        <rect key="frame" x="0.0" y="44" width="300" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jPR-IG-ZNX">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="160" id="jCG-Db-Sfx"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="userName2Changed:" destination="JCx-y1-est" eventType="editingChanged" id="wsz-bf-GBV"/>
+                                                    <outlet property="delegate" destination="JCx-y1-est" id="iHp-vS-9lY"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User not found" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHk-zC-Rae">
+                                                <rect key="frame" x="168" y="0.0" width="132" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rzQ-hQ-yh8">
+                                        <rect key="frame" x="0.0" y="88" width="300" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username 3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ye-G9-9gG">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="160" id="Qf0-02-nmk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="userName3Changed:" destination="JCx-y1-est" eventType="editingChanged" id="lvG-Xh-7rc"/>
+                                                    <outlet property="delegate" destination="JCx-y1-est" id="OeV-Am-qcN"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User not found" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyc-8s-Rzk">
+                                                <rect key="frame" x="168" y="0.0" width="132" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Kfn-7Z-0mb">
+                                        <rect key="frame" x="0.0" y="132" width="300" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username 4" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oOY-hu-DXb">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="160" id="fh5-Ac-g8t"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="userName4Changed:" destination="JCx-y1-est" eventType="editingChanged" id="BSi-AN-IvR"/>
+                                                    <outlet property="delegate" destination="JCx-y1-est" id="RQG-2X-9KN"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User not found" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umf-zf-esc">
+                                                <rect key="frame" x="168" y="0.0" width="132" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="HJp-7S-Ezw"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6TA-gG-Ykm" firstAttribute="centerX" secondItem="B51-x2-Q8q" secondAttribute="centerX" id="AZ1-2A-cdS"/>
+                            <constraint firstItem="mut-R0-T5t" firstAttribute="centerX" secondItem="B51-x2-Q8q" secondAttribute="centerX" id="Ofq-l9-NVS"/>
+                            <constraint firstItem="mut-R0-T5t" firstAttribute="centerY" secondItem="B51-x2-Q8q" secondAttribute="centerY" id="btV-Jh-2Ce"/>
+                            <constraint firstItem="mut-R0-T5t" firstAttribute="top" secondItem="6TA-gG-Ykm" secondAttribute="bottom" constant="30" id="jiM-wu-KBo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="a1u-cC-hmg"/>
+                    </view>
+                    <connections>
+                        <outlet property="signUpButton" destination="mut-R0-T5t" id="lLs-Xw-faM"/>
+                        <outlet property="user1UpdateLabel" destination="EjQ-2C-W6P" id="ce5-4Q-7pc"/>
+                        <outlet property="user2UpdateLabel" destination="AHk-zC-Rae" id="yaz-d6-Xg6"/>
+                        <outlet property="user3UpdateLabel" destination="Cyc-8s-Rzk" id="dc3-Wg-U5J"/>
+                        <outlet property="user4UpdateLabel" destination="umf-zf-esc" id="6HV-eP-t7G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rqr-L3-xWY" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1333" y="821"/>
         </scene>
     </scenes>
 </document>

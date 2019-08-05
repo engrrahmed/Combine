@@ -10,6 +10,7 @@
 		816555D7C1C53811C2D66620 /* Pods_CombineTestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB21D41D547EEC9ABC951CAF /* Pods_CombineTestProject.framework */; };
 		DD2D508622F80A6400DA8FF8 /* MVVMSampleVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D508522F80A6400DA8FF8 /* MVVMSampleVM.swift */; };
 		DD2D508822F80A7A00DA8FF8 /* MVVMSampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D508722F80A7A00DA8FF8 /* MVVMSampleVC.swift */; };
+		DD2D508B22F8359600DA8FF8 /* AsyncVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D508A22F8359600DA8FF8 /* AsyncVC.swift */; };
 		DD33AA5F22F1CF270019819B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD33AA5E22F1CF270019819B /* AppDelegate.swift */; };
 		DD33AA6122F1CF270019819B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD33AA6022F1CF270019819B /* SceneDelegate.swift */; };
 		DD33AA6322F1CF270019819B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD33AA6222F1CF270019819B /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 		BB21D41D547EEC9ABC951CAF /* Pods_CombineTestProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CombineTestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2D508522F80A6400DA8FF8 /* MVVMSampleVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSampleVM.swift; sourceTree = "<group>"; };
 		DD2D508722F80A7A00DA8FF8 /* MVVMSampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMSampleVC.swift; sourceTree = "<group>"; };
+		DD2D508A22F8359600DA8FF8 /* AsyncVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncVC.swift; sourceTree = "<group>"; };
 		DD33AA5B22F1CF270019819B /* CombineTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD33AA5E22F1CF270019819B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD33AA6022F1CF270019819B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,14 @@
 			path = MVVMSample;
 			sourceTree = "<group>";
 		};
+		DD2D508922F8356600DA8FF8 /* AsynData */ = {
+			isa = PBXGroup;
+			children = (
+				DD2D508A22F8359600DA8FF8 /* AsyncVC.swift */,
+			);
+			path = AsynData;
+			sourceTree = "<group>";
+		};
 		DD33AA5222F1CF270019819B = {
 			isa = PBXGroup;
 			children = (
@@ -133,9 +143,10 @@
 		DD33AA7922F303C80019819B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DD2D508422F80A3F00DA8FF8 /* MVVMSample */,
 				DD33AA7A22F304080019819B /* CombineLatestVC.swift */,
+				DD2D508422F80A3F00DA8FF8 /* MVVMSample */,
 				DD33AA8222F380110019819B /* SignUp */,
+				DD2D508922F8356600DA8FF8 /* AsynData */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -274,6 +285,7 @@
 				DD33AA8422F380260019819B /* FindUserModel.swift in Sources */,
 				DD33AA5F22F1CF270019819B /* AppDelegate.swift in Sources */,
 				DD33AA6122F1CF270019819B /* SceneDelegate.swift in Sources */,
+				DD2D508B22F8359600DA8FF8 /* AsyncVC.swift in Sources */,
 				DD33AA7322F2FC3F0019819B /* NetworkAPI.swift in Sources */,
 				DD33AA8122F37ADD0019819B /* SignUpViewModel.swift in Sources */,
 				DD33AA7D22F376BE0019819B /* FindUserServiceAPI.swift in Sources */,
