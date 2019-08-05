@@ -25,11 +25,12 @@ class MVVMSampleVC: UIViewController {
         // Do any additional setup after loading the view.
      validatedCredentials = viewModel.setupPasswordValidatorOnbutton()
         .receive(on: DispatchQueue.main)
-//        .sink { isInValidPassword in
-//            print("IS Valid PASSWORD: \(isInValidPassword)")
-//
-//        }
-        .assign(to: \.isHidden, on: signUpButton)
+        .sink { [weak self] isInValidPassword in
+            print("IS Valid PASSWORD: \(isInValidPassword)")
+            self?.signUpButton.isHidden = isInValidPassword
+            self?.showTextLabel.isHidden = !isInValidPassword
+        }
+        //        .assign(to: \.isHidden, on: signUpButton)
     }
     
     @IBAction func clickOnSignUpButton(_ sender: Any) {

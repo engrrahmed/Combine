@@ -182,10 +182,10 @@
             </objects>
             <point key="canvasLocation" x="-123" y="-1075"/>
         </scene>
-        <!--Sample1VC-->
+        <!--Combine LatestVC-->
         <scene sceneID="AJV-43-4Wl">
             <objects>
-                <viewController id="VN2-O2-qSn" customClass="Sample1VC" customModule="CombineTestProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VN2-O2-qSn" customClass="CombineLatestVC" customModule="CombineTestProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5tI-hR-6Ud">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -278,10 +278,10 @@
             </objects>
             <point key="canvasLocation" x="-123" y="-406"/>
         </scene>
-        <!--Sign Up User View Controller-->
+        <!--Sign Up UserVC-->
         <scene sceneID="4xn-Zu-S4s">
             <objects>
-                <viewController id="vcg-NH-GCT" customClass="SignUpUserViewController" customModule="CombineTestProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vcg-NH-GCT" customClass="SignUpUserVC" customModule="CombineTestProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kLl-WP-5Vi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

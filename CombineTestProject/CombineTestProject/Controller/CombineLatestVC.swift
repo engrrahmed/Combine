@@ -1,5 +1,5 @@
 //
-//  Sample1VC.swift
+//  CombineLatestVC.swift
 //  CombineTestProject
 //
 //  Created by Rizwan Ahmed on 01/08/2019.
@@ -9,7 +9,7 @@
 import UIKit
 import Combine
 //import Publi
-class Sample1VC: UIViewController {
+class CombineLatestVC: UIViewController {
     
     @IBOutlet weak var showTextLabel        : UILabel!
     @IBOutlet weak var passwordTextField    : UITextField!

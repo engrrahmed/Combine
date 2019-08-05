@@ -1,5 +1,5 @@
 //
-//  SignUpUserViewController.swift
+//  SignUpUserVC.swift
 //  CombineTestProject
 //
 //  Created by Rizwan Ahmed on 02/08/2019.
@@ -10,7 +10,7 @@ import UIKit
 
 import Combine
 //import Publi
-class SignUpUserViewController: UIViewController {
+class SignUpUserVC: UIViewController {
     
     @IBOutlet weak var passwordErrorLabel   : UILabel!
     @IBOutlet weak var userNotFoundLabel    : UILabel!
